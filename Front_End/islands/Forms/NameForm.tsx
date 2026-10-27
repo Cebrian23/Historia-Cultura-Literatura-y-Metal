@@ -1,0 +1,208 @@
+import { useState } from "preact/hooks";
+
+type Props = {
+    surname: boolean;
+    nickname?: boolean
+    page_back: string;
+}
+
+const NameForm = (props: Props) => {
+    const apellido: boolean = props.surname;
+    const nickname: boolean | undefined = props.nickname;
+    const page_back: string = props.page_back;
+
+    const [name, setName] = useState<string>("");
+    const [surname, setSurname] = useState<string>("");
+    const [nick, setNickname] = useState<string>("");
+
+    return(
+        <div>
+            <form>
+                <h1>
+                    {
+                        page_back === "Literature" &&
+                        <>Filtro por título</>
+                    }
+                    {
+                        page_back !== "Literature" && apellido.valueOf() !== true && (nickname === undefined || nickname === false) &&
+                        <>Filtro por nombre</>
+                    }
+                    {
+                        page_back !== "Literature" && apellido.valueOf() === true && (nickname === undefined || nickname === false) &&
+                        <>Filtro por nombre y apellido</>
+                    }
+                    {
+                        page_back === "People" && nickname?.valueOf() === true &&
+                        <>Filtro por apodo</>
+                    }
+                </h1>
+                <div class="row_data">
+                    <div class="column_data">
+                        <label for="name">
+                            {
+                                page_back === "Literature" &&
+                                <>Título:</>
+                            }
+                            {
+                                page_back !== "Literature" && (nickname === undefined || nickname === false) &&
+                                <>Nombre:</>
+                            }
+                            {
+                                page_back !== "Literature" && (nickname !== undefined && nickname === true) &&
+                                <>Apodo:</>
+                            }
+                        </label>
+                        {
+                            apellido.valueOf() === true &&
+                            <>
+                                <br/>
+                                <label for="surname">Apellidos:</label>
+                            </>
+                        }
+                    </div>
+                    <div class="column_data">
+                        <input type="text" name="name" onChange={(e) => {
+                            if(nickname === undefined || nickname === false){
+                                setName(e.currentTarget.value);
+                            }
+                            else{
+                                setNickname(e.currentTarget.value);
+                            }
+                        }} required/>
+                        {
+                            apellido.valueOf() === true &&
+                            <>
+                                <br/>
+                                <input type="text" name="surname" onChange={(e) => setSurname(e.currentTarget.value)} required/>
+                            </>
+                        }
+                    </div>
+                </div>
+                <div class="column_data">
+                    <div class="row_buttons">
+                        {
+                            page_back === "Events" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/event/events"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/event/name/Events_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "People" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/person/people"}>Volver</button>
+                                {
+                                    <button type="button" onClick={() => {
+                                        const aux_name = name.trim();
+                                        const aux_surname = surname.trim();
+                                        const aux_nickname = nick.trim();
+                                        if(aux_name !== "" && aux_surname === "" && apellido === false){
+                                            location.href=`/person/name/People_name?name=${aux_name}`
+                                        }
+                                        else if(aux_name !== "" && aux_surname !== ""){
+                                            location.href=`/person/name/People_name?name=${aux_name}&surname=${aux_surname}`
+                                        }
+                                        else if(aux_nickname !== ""){
+                                            location.href=`/person/name/People_name?nickname=${aux_nickname}`
+                                        }
+                                    }}>Enviar</button>
+                                }
+                            </>
+                        }
+                        {
+                            page_back === "Organizations" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/organization/organizations"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/organization/name/Organizations_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Literature" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/book/literature"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/book/title/Books_title?title=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Heraldries" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/heraldry/heraldries"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/heraldry/name/Heraldries_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Legends" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/legend/legends"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/legend/name/Legends_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Miths" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/mith/miths"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/mith/name/Miths_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Festivities" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/festivity/festivities"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/festivity/name/Festivities_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                        {
+                            page_back === "Monuments" &&
+                            <>
+                                <button type="button" onClick={() => location.href="/monument/monuments"}>Volver</button>
+                                <button type="button" onClick={() => {
+                                    const aux = name.trim();
+                                    if(aux !== ""){
+                                        location.href=`/monument/name/Monuments_name?name=${aux}`
+                                    }
+                                }}>Enviar</button>
+                            </>
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    );
+}
+
+export default NameForm;

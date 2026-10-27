@@ -1,0 +1,43 @@
+import { useState } from "preact/hooks";
+import NameForm from "../Forms/NameForm.tsx";
+import FestivityForm from "../Forms/FestivityForm.tsx";
+
+const Festivities = () => {
+    const [initialForm, showInitialForm] = useState<boolean>(true);
+    const [nameFilter, showNameFilter] = useState<boolean>(false);
+    const [dateFilter, showInitDateFilter] = useState<boolean>(false);
+
+    return(
+        <div>
+            {
+                initialForm.valueOf() === true &&
+                <form>
+                    <h1>Selecciona la acción con la que desea obtener los datos:</h1>
+                    <br/>
+                    <button class="pageButtonForm" type="button" onClick={() => {
+                        showInitialForm(false);
+                        showNameFilter(true);
+                    }}>Filtrar por nombre</button>
+                    <br/>
+                    <button class="pageButtonForm" type="button" onClick={() => {
+                        showInitialForm(false);
+                        showInitDateFilter(true);
+                    }}>Filtrar por fecha</button>
+                    <br/>
+                    <button class="pageButtonForm" type="button" onClick={() => location.href="/festivity/all/All_festivities"}>Mostrar todos los datos</button>
+                    <br/>
+                </form>
+            }
+            {
+                nameFilter.valueOf() === true &&
+                <NameForm surname={false} page_back="Festivities"/>
+            }
+            {
+                dateFilter.valueOf() === true &&
+                <FestivityForm/>
+            }
+        </div>
+    );
+}
+
+export default Festivities;
