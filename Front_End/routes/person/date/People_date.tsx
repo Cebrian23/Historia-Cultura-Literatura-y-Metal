@@ -84,8 +84,6 @@ const Page = (props: PageProps<Data>) => {
     const acdc_2 = props.data.acdc_2
     const people = props.data.people;
 
-    console.log(people);
-
     return(
         <div>
             {

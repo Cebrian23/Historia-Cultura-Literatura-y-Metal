@@ -25,8 +25,6 @@ const Page = (props: PageProps<Data>) => {
     const songs = mith.talked_about_in_song;
     const albums = mith.talked_about_in_album;
 
-    console.log(mith);
-
     return (
         <div>
             <Component_Header name={mith.name} type="mith"/>

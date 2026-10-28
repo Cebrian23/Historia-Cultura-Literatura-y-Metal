@@ -21,8 +21,6 @@ export const handler: Handlers<Data> = {
 const Page = (props: PageProps<Data>) => {
     const album = props.data.album;
 
-    console.log(album);
-
     return (
         <div>
             <Component_Header name={album.name} type="album" image={album.cover}/>

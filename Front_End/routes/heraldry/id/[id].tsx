@@ -25,8 +25,6 @@ const Page = (props: PageProps<Data>) => {
     const songs = heraldry.talked_about_in_song;
     const albums = heraldry.talked_about_in_album;
 
-    console.log(heraldry);
-
     return (
         <div>
             <Component_Header name={heraldry.name} image={heraldry.image} type="heraldry"/>

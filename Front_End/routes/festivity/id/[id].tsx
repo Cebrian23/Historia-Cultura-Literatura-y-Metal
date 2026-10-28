@@ -24,8 +24,6 @@ const Page = (props: PageProps<Data>) => {
     const festivity = props.data.festivity;
     const songs = festivity.talked_about_in_song;
     const albums = festivity.talked_about_in_album;
-    
-    console.log(festivity);
 
     return(
         <div>

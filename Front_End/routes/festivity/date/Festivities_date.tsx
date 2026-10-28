@@ -33,8 +33,6 @@ const Page = (props: PageProps<Data>) => {
     const day = props.data.day;
     const festivities = props.data.festivities;
 
-    console.log(festivities);
-
     return(
         <div>
             {

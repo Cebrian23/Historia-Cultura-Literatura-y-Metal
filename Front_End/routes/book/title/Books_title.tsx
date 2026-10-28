@@ -30,8 +30,6 @@ const Page = (props: PageProps<Data>) => {
     const title = props.data.title;
     const books = props.data.books;
 
-    console.log(books);
-
     return(
         <div>            
             {

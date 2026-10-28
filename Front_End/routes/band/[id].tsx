@@ -23,8 +23,6 @@ const Page = (props: PageProps<Data>) => {
     const band = props.data.band;
     const albums = band.albums;
 
-    console.log(band);
-
     return (
         <div>
             <Component_Header name={band.name} type="band"/>

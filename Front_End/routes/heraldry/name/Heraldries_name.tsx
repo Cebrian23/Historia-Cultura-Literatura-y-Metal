@@ -29,8 +29,6 @@ export const handler: Handlers<Data> = {
 const Page = (props: PageProps<Data>) => {
     const name = props.data.name;
     const heraldries = props.data.heraldries;
-
-    console.log(heraldries);
     
     return(
         <div>

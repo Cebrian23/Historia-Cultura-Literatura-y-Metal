@@ -14,7 +14,6 @@ const Song_Component = (props: Data) => {
     const band = album_in.creator;
     const talk_about = props.talk_about;
     const videos = props.videos;
-    console.log(videos);
 
     return(
         <div class="card_head">

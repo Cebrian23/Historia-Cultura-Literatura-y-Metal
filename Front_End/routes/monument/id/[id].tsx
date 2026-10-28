@@ -24,8 +24,6 @@ const Page = (props: PageProps<Data>) => {
     const monument = props.data.monument;
     const songs = monument.talked_about_in_song;
     const albums = monument.talked_about_in_album;
-    
-    console.log(monument);
 
     return (
         <div>

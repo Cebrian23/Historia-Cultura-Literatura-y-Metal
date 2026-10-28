@@ -20,8 +20,6 @@ export const handler: Handlers<Data> = {
 const Page = (props: PageProps<Data>) => {
     const legends = props.data.legends;
 
-    console.log(legends);
-
     return(
         <div>
             {

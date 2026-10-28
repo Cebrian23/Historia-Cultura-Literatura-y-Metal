@@ -8,7 +8,6 @@ type Data = {
 
 const Component_Albums_I = (props: Data) => {
     const albums = props.albums;
-    //console.log(albums);
     
     return (
         <div class="card_head">

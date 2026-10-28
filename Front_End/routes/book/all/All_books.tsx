@@ -20,8 +20,6 @@ export const handler: Handlers<Data> = {
 const Page = (props: PageProps<Data>) => {
     const books = props.data.books;
 
-    console.log(books);
-
     return(
         <div>
             {

@@ -26,9 +26,6 @@ const Page = (props: PageProps<Data>) => {
     const lyric = song.official_lyric_video;
     const cd = song.official_cd_video;
 
-    console.log("video: " + video);
-    console.log("lyric: " + lyric);
-
     let videos = false;
 
     if((video !== null && video !== undefined && video !== "") ||
@@ -36,9 +33,6 @@ const Page = (props: PageProps<Data>) => {
        (cd !== null && cd !== undefined && cd !== "")){
         videos = true;
     }
-
-
-    console.log(song);
 
     return (
         <div>

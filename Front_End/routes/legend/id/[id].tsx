@@ -24,8 +24,6 @@ const Page = (props: PageProps<Data>) => {
     const legend = props.data.legend;
     const songs = legend.talked_about_in_song;
     const albums = legend.talked_about_in_album;
-    
-    console.log(legend);
 
     return (
         <div>

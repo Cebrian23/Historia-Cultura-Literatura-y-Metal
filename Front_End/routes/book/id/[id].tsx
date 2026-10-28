@@ -25,8 +25,6 @@ const Page = (props: PageProps<Data>) => {
     const songs = book.talked_about_in_song;
     const albums = book.talked_about_in_album;
 
-    console.log(book);
-
     return (
         <div>
             <Component_Header name={book.title} type="book" image={book.cover}/>

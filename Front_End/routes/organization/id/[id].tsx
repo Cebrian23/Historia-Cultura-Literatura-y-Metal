@@ -30,8 +30,6 @@ const Page = (props: PageProps<Data>) => {
     const creation_date = organization.creation;
     const dissolution_date = organization.dissolution;
 
-    console.log(organization);
-
     return (
         <div>
             <Component_Header name={organization.name} type="organization"/>

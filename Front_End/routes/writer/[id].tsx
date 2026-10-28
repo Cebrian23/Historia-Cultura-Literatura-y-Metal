@@ -22,8 +22,6 @@ const Page = (props: PageProps<Data>) => {
     const writer = props.data.writer;
     const books = writer.books;
 
-    console.log(writer);
-
     return (
         <div>
             <Component_Header name={writer.name} surname={writer.surname} type="writer"/>

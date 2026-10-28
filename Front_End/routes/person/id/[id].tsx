@@ -30,8 +30,6 @@ const Page = (props: PageProps<Data>) => {
     const birth_date = person.birth_date;
     const death_date = person.death_date;
 
-    console.log(person);
-
     return (
         <div>
             <Component_Header name={person.name} surname={person.surname} nation_people={person.country_from} type="person"/>

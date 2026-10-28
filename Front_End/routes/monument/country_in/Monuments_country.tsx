@@ -30,8 +30,6 @@ const Page = (props: PageProps<Data>) => {
     const country = props.data.country;
     const monuments = props.data.monuments;
 
-    console.log(monuments);
-
     return(
         <div>
             {

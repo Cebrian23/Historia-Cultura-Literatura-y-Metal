@@ -8,7 +8,6 @@ type Data = {
 
 const Component_Books = (props: Data) => {
     const books = props.books;
-    //console.log(books);
 
     return (
         <div class="card_head">

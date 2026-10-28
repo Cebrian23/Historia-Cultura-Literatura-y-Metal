@@ -65,8 +65,6 @@ const Page = (props: PageProps<Data>) => {
     const year_b = props.data.year_b;
     const books = props.data.books;
 
-    console.log(books);
-
     return(
         <div>
             {

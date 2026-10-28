@@ -8,7 +8,6 @@ type Data = {
 
 const Component_Songs = (props: Data) => {
     const songs = props.songs;
-    //console.log(songs);
 
     return (
         <div class={Class_Selector(songs, true)}>

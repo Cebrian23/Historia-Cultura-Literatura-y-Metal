@@ -30,8 +30,6 @@ const Page = (props: PageProps<Data>) => {
     const start_date = event.start_date;
     const end_date = event.end_date;
 
-    console.log(event);
-
     return (
         <div>
             <Component_Header name={event.name} type="event"/>

@@ -48,8 +48,6 @@ const Page = (props: PageProps<Data>) => {
     const nickname = props.data.nickname
     const people = props.data.people;
 
-    console.log(people);
-
     return(
         <div>
             {
