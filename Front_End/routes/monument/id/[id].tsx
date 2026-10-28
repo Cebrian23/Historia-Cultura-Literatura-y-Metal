@@ -14,7 +14,7 @@ export const handler: Handlers<Data> = {
     GET: async (_req: Request, ctx: FreshContext<unknown, Data>) =>{
         const id = ctx.params.id;
 
-        const data = await Axios.get<MonumentGQL>(`https://ece-i-back-end-ii.deno.dev/monument/id?id=${id}`);
+        const data = await Axios.get<MonumentGQL>(`https://ece-i-back-end.onrender.com/monument/id?id=${id}`);
         
         return ctx.render({monument: data.data});
     }

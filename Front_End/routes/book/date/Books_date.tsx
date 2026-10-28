@@ -31,24 +31,24 @@ export const handler: Handlers<Data> = {
         if(year){
             if(limit === "true"){
                 if(type === "Inicio"){
-                    const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end-ii.deno.dev/books/limit_min_date?year=${year}`);
+                    const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end.onrender.com/books/limit_min_date?year=${year}`);
                 
                     return ctx.render({books: data.data, year: year, limit: limit, type: type});
                 }
                 else if(type === "Fin"){
-                    const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end-ii.deno.dev/books/limit_max_date?year=${year}`);
+                    const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end.onrender.com/books/limit_max_date?year=${year}`);
                 
                     return ctx.render({books: data.data, year: year, limit: limit, type: type});
                 }
             }
             else{
-                const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end-ii.deno.dev/books/publish_date?year=${year}`);
+                const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end.onrender.com/books/publish_date?year=${year}`);
                 
                 return ctx.render({books: data.data, limit: limit, year: year});
             }
         }
         else if(year_a && year_b){
-            const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end-ii.deno.dev/books/double_date?year_a=${year_a}&year_b=${year_b}`);
+            const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end.onrender.com/books/double_date?year_a=${year_a}&year_b=${year_b}`);
         
             return ctx.render({books: data.data, year_a: year_a, year_b: year_b});
         }

@@ -14,7 +14,7 @@ export const handler: Handlers<Data> = {
     GET: async (_req: Request, ctx: FreshContext<unknown, Data>) =>{
         const id = ctx.params.id;
 
-        const data = await Axios.get<BookGQL>(`https://ece-i-back-end-ii.deno.dev/book/id?id=${id}`);
+        const data = await Axios.get<BookGQL>(`https://ece-i-back-end.onrender.com/book/id?id=${id}`);
         
         return ctx.render({book: data.data});
     }

@@ -22,7 +22,7 @@ export const handler: Handlers<Data> = {
             return ctx.render();
         }
         
-        const data = await Axios.get<FestivityGQL[]>(`https://ece-i-back-end-ii.deno.dev/festivities/date?month=${month}&day=${day}`);
+        const data = await Axios.get<FestivityGQL[]>(`https://ece-i-back-end.onrender.com/festivities/date?month=${month}&day=${day}`);
         
         return ctx.render({festivities: data.data, month: month, day: day});
     }

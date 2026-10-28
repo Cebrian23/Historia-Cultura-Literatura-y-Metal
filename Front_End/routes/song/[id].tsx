@@ -13,7 +13,7 @@ export const handler: Handlers<Data> = {
     GET: async (_req: Request, ctx: FreshContext<unknown, Data>) =>{
         const id = ctx.params.id;
 
-        const data = await Axios.get<SongGQL>(`https://ece-i-back-end-ii.deno.dev/song/id?id=${id}`);
+        const data = await Axios.get<SongGQL>(`https://ece-i-back-end.onrender.com/song/id?id=${id}`);
 
         return ctx.render({song: data.data});
     }

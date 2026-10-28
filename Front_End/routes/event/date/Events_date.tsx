@@ -38,29 +38,29 @@ export const handler: Handlers<Data> = {
         if(year){
             if(type && limit){
                 if(type.valueOf() === "Inicio" && limit.valueOf() === "true"){
-                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end-ii.deno.dev/events/limit_start_date?year=${year}&ac_dc=${ac_dc}`);
+                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end.onrender.com/events/limit_start_date?year=${year}&ac_dc=${ac_dc}`);
                     
                     return ctx.render({events: data.data, year: year, acdc: ac_dc, limit: limit, type: type});
                 }
                 else if(type.valueOf() === "Inicio" && limit.valueOf() === "false"){
-                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end-ii.deno.dev/events/start_date?year=${year}&ac_dc=${ac_dc}`);
+                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end.onrender.com/events/start_date?year=${year}&ac_dc=${ac_dc}`);
                     
                     return ctx.render({events: data.data, year: year, acdc: ac_dc, limit: limit, type: type});
                 }
                 else if(type.valueOf() === "Fin" && limit.valueOf() === "true"){
-                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end-ii.deno.dev/events/limit_end_date?year=${year}&ac_dc=${ac_dc}`);
+                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end.onrender.com/events/limit_end_date?year=${year}&ac_dc=${ac_dc}`);
                 
                     return ctx.render({events: data.data, year: year, acdc: ac_dc, limit: limit, type: type});
                 }
                 else if(type.valueOf() === "Fin" && limit.valueOf() === "false"){
-                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end-ii.deno.dev/events/end_date?year=${year}&ac_dc=${ac_dc}`);
+                    const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end.onrender.com/events/end_date?year=${year}&ac_dc=${ac_dc}`);
                 
                     return ctx.render({events: data.data, year: year, acdc: ac_dc, limit: limit, type: type});
                 }
             }
         }
         else if(year_a && year_b){
-            const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end-ii.deno.dev/events/double_date?year_a=${year_a}&ac_dc_1=${ac_dc_1}&year_b=${year_b}&ac_dc_2=${ac_dc_2}`);
+            const data = await Axios.get<EventGQL[]>(`https://ece-i-back-end.onrender.com/events/double_date?year_a=${year_a}&ac_dc_1=${ac_dc_1}&year_b=${year_b}&ac_dc_2=${ac_dc_2}`);
     
             return ctx.render({events: data.data, year_a: year_a, acdc_1: ac_dc_1, year_b: year_b, acdc_2: ac_dc_2});
         }

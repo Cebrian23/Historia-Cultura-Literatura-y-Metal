@@ -20,7 +20,7 @@ export const handler: Handlers<Data> = {
             return ctx.render();
         }
 
-        const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end-ii.deno.dev/books/title?title=${title}`);
+        const data = await Axios.get<BookGQL[]>(`https://ece-i-back-end.onrender.com/books/title?title=${title}`);
         
         return ctx.render({books: data.data, title: title});
     }

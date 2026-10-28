@@ -11,7 +11,7 @@ type Data = {
 
 export const handler: Handlers<Data> = {
     GET: async (_req: Request, ctx: FreshContext<unknown, Data>) =>{
-        const data = await Axios.get<MonumentGQL[]>("https://ece-i-back-end-ii.deno.dev/monuments");
+        const data = await Axios.get<MonumentGQL[]>("https://ece-i-back-end.onrender.com/monuments");
         
         return ctx.render({monuments: data.data});
     }

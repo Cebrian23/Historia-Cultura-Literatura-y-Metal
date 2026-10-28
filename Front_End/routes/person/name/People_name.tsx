@@ -22,18 +22,18 @@ export const handler: Handlers<Data> = {
         
         if(name){
             if(surname){
-                const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end-ii.deno.dev/people/complete_name?name=${name}&surname=${surname}`);
+                const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end.onrender.com/people/complete_name?name=${name}&surname=${surname}`);
         
                 return ctx.render({people: data.data, name: name, surname: surname});
             }
             else{
-                const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end-ii.deno.dev/people/complete_name?name=${name}`);
+                const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end.onrender.com/people/complete_name?name=${name}`);
         
                 return ctx.render({people: data.data, name: name});
             }
         }
         else if(nickname){
-            const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end-ii.deno.dev/people/nickname?nickname=${nickname}`);
+            const data = await Axios.get<PersonGQL[]>(`https://ece-i-back-end.onrender.com/people/nickname?nickname=${nickname}`);
         
             return ctx.render({people: data.data, nickname: nickname});
         }

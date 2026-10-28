@@ -20,7 +20,7 @@ export const handler: Handlers<Data> = {
             return ctx.render();
         }
 
-        const data = await Axios.get<MithGQL[]>(`https://ece-i-back-end-ii.deno.dev/miths/name?name=${name}`);
+        const data = await Axios.get<MithGQL[]>(`https://ece-i-back-end.onrender.com/miths/name?name=${name}`);
         
         return ctx.render({miths: data.data, name: name});
     }

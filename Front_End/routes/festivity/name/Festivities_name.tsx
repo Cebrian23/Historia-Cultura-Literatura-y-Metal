@@ -20,7 +20,7 @@ export const handler: Handlers<Data> = {
             return ctx.render();
         }
 
-        const data = await Axios.get<FestivityGQL[]>(`https://ece-i-back-end-ii.deno.dev/festivities/name?name=${name}`);
+        const data = await Axios.get<FestivityGQL[]>(`https://ece-i-back-end.onrender.com/festivities/name?name=${name}`);
         
         return ctx.render({festivities: data.data, name: name});
     }

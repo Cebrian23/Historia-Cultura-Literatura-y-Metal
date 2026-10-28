@@ -14,7 +14,7 @@ export const handler: Handlers<Data> = {
     GET: async (_req: Request, ctx: FreshContext<unknown, Data>) =>{
         const id = ctx.params.id;
 
-        const data = await Axios.get<FestivityGQL>(`https://ece-i-back-end-ii.deno.dev/festivity/id?id=${id}`);
+        const data = await Axios.get<FestivityGQL>(`https://ece-i-back-end.onrender.com/festivity/id?id=${id}`);
         
         return ctx.render({festivity: data.data});
     }

@@ -20,7 +20,7 @@ export const handler: Handlers<Data> = {
             return ctx.render();
         }
 
-        const data = await Axios.get<HeraldryGQL[]>(`https://ece-i-back-end-ii.deno.dev/heraldries/name?name=${name}`);
+        const data = await Axios.get<HeraldryGQL[]>(`https://ece-i-back-end.onrender.com/heraldries/name?name=${name}`);
         
         return ctx.render({heraldries: data.data, name: name});
     }
